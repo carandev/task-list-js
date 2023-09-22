@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lista de tareas</title>
+</head>
+
+<body>
+  <header>
+    <h1>Tareas</h1>
+  </header>
+  <main>
+    <section id="addInputContainer">
+      <input type="text" name="taskInput" id="taskInput" placeholder="Escribe la tarea">
+      <button id="addTaskButton">Añadir</button>
+    </section>
+    <section id="errorContainer">
+    </section>
+    <section id="tasksContainer">
+    </section>
+  </main>
+
+  <template id="taskCard">
+    <h3></h3>
+    <div>
+      <button class="editTaskButton">E</button>
+      <button class="deleteTaskButton">D</button>
+    </div>
+  </template>
+  <script type="module" src="/main.js"></script>
+</body>
+
+</html>

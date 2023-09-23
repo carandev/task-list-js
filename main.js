@@ -14,7 +14,9 @@ const STORAGE_NAME = 'tasks'
 let tasks = []
 
 document.addEventListener('DOMContentLoaded', () => {
-  tasks = JSON.parse(localStorage.getItem(STORAGE_NAME))
+  if (localStorage.length !== 0) {
+    tasks = JSON.parse(localStorage.getItem(STORAGE_NAME))
+  }
 
   renderTasks()
 })

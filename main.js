@@ -19,6 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   renderTasks()
+
+  taskTitleInput.focus()
 })
 
 const renderTasks = () => {

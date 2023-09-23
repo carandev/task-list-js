@@ -9,7 +9,15 @@ const addTaskButton = document.getElementById('addTaskButton')
 
 const errorContainer = document.getElementById('errorContainer')
 
-const tasks = []
+const STORAGE_NAME = 'tasks'
+
+let tasks = []
+
+document.addEventListener('DOMContentLoaded', () => {
+  tasks = JSON.parse(localStorage.getItem(STORAGE_NAME))
+
+  renderTasks()
+})
 
 const renderTasks = () => {
   tasksContainer.innerHTML = ''
@@ -17,7 +25,6 @@ const renderTasks = () => {
     cardContainer.firstElementChild.childNodes[1].textContent = task
     cardContainer.firstElementChild.childNodes[3].firstElementChild.dataset.taskId = index
     cardContainer.firstElementChild.childNodes[3].lastElementChild.dataset.taskId = index
-    console.log(cardContainer)
 
     tasksContainer.append(cardContainer.cloneNode(true))
   })
@@ -28,6 +35,7 @@ const renderTasks = () => {
   deleteTaskButtons.forEach(button => {
     button.addEventListener('click', e => {
       tasks.splice(e.target.dataset.taskId, 1)
+      localStorage.setItem(STORAGE_NAME, JSON.stringify(tasks))
       renderTasks()
     })
   })
@@ -55,6 +63,7 @@ const renderTasks = () => {
       }
 
       tasks[e.target.dataset.taskId] = taskTitleInput.value
+      localStorage.setItem(STORAGE_NAME, JSON.stringify(tasks))
       renderTasks()
       taskTitleInput.value = ''
       taskTitleInput.focus()
@@ -84,6 +93,7 @@ addTaskButton.addEventListener('click', () => {
   }
 
   tasks.unshift(taskTitle)
+  localStorage.setItem(STORAGE_NAME, JSON.stringify(tasks))
 
   renderTasks()
 

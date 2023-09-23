@@ -14,9 +14,10 @@ const tasks = []
 const renderTasks = () => {
   tasksContainer.innerHTML = ''
   tasks.forEach((task, index) => {
-    cardContainer.childNodes[1].textContent = task
-    cardContainer.childNodes[3].firstElementChild.dataset.taskId = index
-    cardContainer.childNodes[3].lastElementChild.dataset.taskId = index
+    cardContainer.firstElementChild.childNodes[1].textContent = task
+    cardContainer.firstElementChild.childNodes[3].firstElementChild.dataset.taskId = index
+    cardContainer.firstElementChild.childNodes[3].lastElementChild.dataset.taskId = index
+    console.log(cardContainer)
 
     tasksContainer.append(cardContainer.cloneNode(true))
   })
@@ -35,9 +36,11 @@ const renderTasks = () => {
     button.addEventListener('click', e => {
       const taskTitle = taskTitleInput.value
       errorContainer.textContent = ''
+      errorContainer.classList.remove('p-4')
 
       if (taskTitle.trim() === '') {
         errorContainer.textContent = 'No se puede dejar la tarea vacía.'
+        errorContainer.classList.add('p-4')
         taskTitleInput.value = ''
         taskTitleInput.focus()
         return
@@ -45,6 +48,7 @@ const renderTasks = () => {
 
       if (tasks.some(task => task.toLowerCase() === taskTitle.toLowerCase())) {
         errorContainer.textContent = 'Ya existe esta tarea.'
+        errorContainer.classList.add('p-4')
         taskTitleInput.value = ''
         taskTitleInput.focus()
         return
@@ -61,9 +65,11 @@ const renderTasks = () => {
 addTaskButton.addEventListener('click', () => {
   const taskTitle = taskTitleInput.value
   errorContainer.textContent = ''
+  errorContainer.classList.remove('p-4')
 
   if (taskTitle.trim() === '') {
     errorContainer.textContent = 'No se puede añadir una tarea vacía.'
+    errorContainer.classList.add('p-4')
     taskTitleInput.value = ''
     taskTitleInput.focus()
     return
@@ -71,6 +77,7 @@ addTaskButton.addEventListener('click', () => {
 
   if (tasks.some(task => task.toLowerCase() === taskTitle.toLowerCase())) {
     errorContainer.textContent = 'Ya existe esta tarea.'
+    errorContainer.classList.add('p-4')
     taskTitleInput.value = ''
     taskTitleInput.focus()
     return

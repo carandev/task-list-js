@@ -3,31 +3,46 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="" />
+  <link rel="icon" type="image/svg+xml" href="/checklist-icon.svg" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lista de tareas</title>
 </head>
 
-<body>
-  <header>
-    <h1>Tareas</h1>
+<body class="bg-slate-900">
+  <header class="bg-slate-800 p-4 text-3xl flex gap-2 text-yellow-400 items-center justify-center">
+    <i class="ti ti-checklist"></i>
+    <h1 class="text-center text-yellow-400">Tareas</h1>
   </header>
-  <main>
-    <section id="addInputContainer">
-      <input type="text" name="taskInput" id="taskInput" placeholder="Escribe la tarea">
-      <button id="addTaskButton">Añadir</button>
+  <main class="flex flex-col items-center p-4">
+    <section id="addInputContainer" class="flex gap-4">
+      <input class="border border-cyan-400 outline-none rounded text-white bg-transparent px-4 py-2" type="text"
+        name="taskInput" id="taskInput" placeholder="Escribe la tarea">
+      <button id="addTaskButton"
+        class="flex items-center gap-2 border border-yellow-500 px-4 py-2 rounded text-white hover:bg-yellow-500 hover:text-slate-900 transition-all hover:after:content-['Agregar'] hover:text-lg focus:after:content-['Agregar'] focus:text-lg focus:bg-yellow-500 focus:text-slate-900 outline-none">
+        <i class="ti ti-plus text-2xl"></i>
+      </button>
     </section>
-    <section id="errorContainer">
+    <section id="errorContainer" class="text-white bg-red-600 rounded my-4">
     </section>
-    <section id="tasksContainer">
+    <section id="tasksContainer" class="flex gap-4 flex-wrap justify-center">
     </section>
   </main>
 
   <template id="taskCard">
-    <h3></h3>
-    <div>
-      <button class="editTaskButton">E</button>
-      <button class="deleteTaskButton">D</button>
+    <div
+      class="bg-transparent border border-green-600 rounded flex flex-col p-4 justify-between items-center h-56 w-56">
+      <p class="text-white text-center"></p>
+      <div class="flex gap-4">
+        <button
+          class="editTaskButton flex gap-2 items-center border border-blue-600 rounded py-2 px-4 text-white hover:bg-blue-600 hover:text-slate-900 transitions-all hover:after:content-['Editar'] hover:text-lg">
+          <i class="ti ti-edit text-2xl"></i>
+        </button>
+        <button
+          class="deleteTaskButton flex gap-2 items-center border border-red-600 rounded py-2 px-4 text-white hover:bg-red-600 hover:text-slate-900 transitions-all hover:after:content-['Eliminar'] hover:text-lg">
+          <i class="ti ti-trash text-2xl"></i>
+        </button>
+      </div>
     </div>
   </template>
   <script type="module" src="/main.js"></script>

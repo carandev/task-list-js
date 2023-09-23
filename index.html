@@ -15,11 +15,11 @@
     <h1 class="text-center text-yellow-400">Tareas</h1>
   </header>
   <main class="flex flex-col items-center p-4">
-    <section id="addInputContainer" class="flex gap-4">
+    <section id="addInputContainer" class="flex gap-4 flex-wrap">
       <input class="border border-cyan-400 outline-none rounded text-white bg-transparent px-4 py-2" type="text"
         name="taskInput" id="taskInput" placeholder="Escribe la tarea">
       <button id="addTaskButton"
-        class="flex items-center gap-2 border border-yellow-500 px-4 py-2 rounded text-white hover:bg-yellow-500 hover:text-slate-900 transition-all hover:after:content-['Agregar'] hover:text-lg focus:after:content-['Agregar'] focus:text-lg focus:bg-yellow-500 focus:text-slate-900 outline-none">
+        class="flex items-center gap-2 border border-yellow-500 px-4 py-2 rounded text-white md:hover:bg-yellow-500 md:hover:text-slate-900 md:focus:bg-yellow-500 md:focus:text-slate-900 transition-all md:hover:after:content-['Agregar'] md:hover:text-lg md:focus:after:content-['Agregar'] md:focus:text-lg outline-none">
         <i class="ti ti-plus text-2xl"></i>
       </button>
     </section>
@@ -35,11 +35,11 @@
       <p class="text-white text-center"></p>
       <div class="flex gap-4">
         <button
-          class="editTaskButton flex gap-2 items-center border border-blue-600 rounded py-2 px-4 text-white hover:bg-blue-600 hover:text-slate-900 transitions-all hover:after:content-['Editar'] hover:text-lg">
+          class="editTaskButton flex gap-2 items-center border border-blue-600 rounded py-2 px-4 text-white md:hover:bg-blue-600 md:hover:text-slate-900 transitions-all md:hover:after:content-['Editar'] md:hover:text-lg">
           <i class="ti ti-edit text-2xl"></i>
         </button>
         <button
-          class="deleteTaskButton flex gap-2 items-center border border-red-600 rounded py-2 px-4 text-white hover:bg-red-600 hover:text-slate-900 transitions-all hover:after:content-['Eliminar'] hover:text-lg">
+          class="deleteTaskButton flex gap-2 items-center border border-red-600 rounded py-2 px-4 text-white md:hover:bg-red-600 md:hover:text-slate-900 transitions-all md:hover:after:content-['Eliminar'] md:hover:text-lg">
           <i class="ti ti-trash text-2xl"></i>
         </button>
       </div>

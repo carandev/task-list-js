@@ -27,12 +27,21 @@
     </section>
     <section id="tasksContainer" class="flex gap-4 flex-wrap justify-center">
     </section>
+    <hr>
+    <section id="checkedTasksContainer" class="flex gap-4 flex-wrap justify-center">
+    </section>
   </main>
 
   <template id="taskCard">
     <div
       class="bg-transparent border border-green-600 rounded flex flex-col p-4 justify-between items-center h-56 w-56">
-      <p class="text-white text-center"></p>
+      <div class="flex items-center gap-10">
+        <div class="text-white"></div>
+        <button
+          class="checkTaskButton flex items-center border border-blue-600 rounded py-1 px-2 text-white md:hover:bg-blue-600 transitions-all">
+          <i class="ti ti-check text-xl"></i>
+        </button>
+      </div>
       <div class="flex gap-4">
         <button
           class="editTaskButton flex gap-2 items-center border border-blue-600 rounded py-2 px-4 text-white md:hover:bg-blue-600 transitions-all md:hover:after:content-['Editar'] md:hover:text-lg">
